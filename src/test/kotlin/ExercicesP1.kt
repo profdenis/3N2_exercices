@@ -20,13 +20,13 @@ class ExercicesP1Test {
     @Test
     fun testIsPalindrome() {
         assertEquals(true, isPalindrome("A man a plan a canal Panama"))
-        assertEquals(true, isPalindrome("race a car"))
+        assertEquals(false, isPalindrome("race a car"))
         assertEquals(false, isPalindrome("hello"))
         assertEquals(true, isPalindrome("Able was I ere I saw Elba"))
         assertEquals(true, isPalindrome(""))
 
         assertEquals(true, isPalindrome("!@#$%^&*()"))
-        assertEquals(true, isPalindrome("  spaces  "))
+        assertEquals(true, isPalindrome("  kayak     "))
         assertEquals(false, isPalindrome("Almost a palindrome"))
         assertEquals(true, isPalindrome("A Santa at NASA"))
     }
@@ -51,7 +51,8 @@ class ExercicesP1Test {
     @Test
     fun testCountOccurrences() {
         assertEquals(3, countOccurrences("Hello, World!", 'l'))
-        assertEquals(1, countOccurrences("Hello, World!", 'o'))
+        assertEquals(1, countOccurrences("Hello, World!", 'H'))
+        assertEquals(0, countOccurrences("Hello, World!", 'h'))
         assertEquals(0, countOccurrences("Hello, World!", 'z'))
         assertEquals(2, countOccurrences("Hello, World!", 'o'))
         assertEquals(0, countOccurrences("", 'a'))
@@ -71,7 +72,7 @@ class ExercicesP1Test {
         assertEquals("cba fed ihg", reverseWords("abc def ghi"))
 
         assertEquals("  ", reverseWords("  "))
-        assertEquals("dlroW! olleH", reverseWords("Hello! World"))
+        assertEquals("olleH, dlroW!", reverseWords("Hello, World!"))
         assertEquals("elpitluM   secaps", reverseWords("Multiple   spaces"))
         assertEquals("noitautcnuP, dna secaps .", reverseWords("Punctuation, and spaces ."))
     }
