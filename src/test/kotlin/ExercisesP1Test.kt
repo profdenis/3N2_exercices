@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class ExercicesP1Test {
+class ExercisesP1Test {
     @Test
     fun testSumOfDigits() {
         assertEquals(6, sumOfDigits(123))
@@ -75,5 +75,30 @@ class ExercicesP1Test {
         assertEquals("olleH, dlroW!", reverseWords("Hello, World!"))
         assertEquals("elpitluM   secaps", reverseWords("Multiple   spaces"))
         assertEquals("noitautcnuP, dna secaps .", reverseWords("Punctuation, and spaces ."))
+    }
+
+        @Test
+    fun testConvertRomanToArabic() {
+        assertEquals(1, convertRomanToArabic("I"))
+        assertEquals(4, convertRomanToArabic("IV"))
+        assertEquals(9, convertRomanToArabic("IX"))
+        assertEquals(1994, convertRomanToArabic("MCMXCIV"))
+        assertEquals(3999, convertRomanToArabic("MMMCMXCIX"))
+
+        assertFailsWith<IllegalArgumentException> {
+            convertRomanToArabic("IIII")
+        }
+        assertFailsWith<IllegalArgumentException> {
+            convertRomanToArabic("ABC")
+        }
+    }
+
+    @Test
+    fun testIsValidRomanNumeral() {
+        assertEquals(true, isValidRomanNumeral("MCMLIV"))
+        assertEquals(false, isValidRomanNumeral("IIII"))
+        assertEquals(false, isValidRomanNumeral("XYZ"))
+        assertEquals(true, isValidRomanNumeral("MMMCMXCIX"))
+        assertEquals(false, isValidRomanNumeral("IC"))
     }
 }
