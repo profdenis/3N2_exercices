@@ -18,7 +18,8 @@ class Exercise9Test {
         assertEquals(8, password2.length)
         assertTrue(password2.all { it.isLetter() })
 
-        assertEquals("Fort", generator.checkPasswordStrength("P@ssw0rd123!"))
-        assertEquals("Faible", generator.checkPasswordStrength("password"))
+        assertEquals("Strong", generator.checkPasswordStrength("P@ssw0rd123!"))
+        assertEquals("Medium", generator.checkPasswordStrength("Passw0rd123"))
+        assertEquals("Weak", generator.checkPasswordStrength("password"))
     }
 }

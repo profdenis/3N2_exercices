@@ -7,11 +7,11 @@ class Exercise10Test {
     @Test
     fun testTextAnalyzer() {
         val analyzer = TextAnalyzer()
-        val text = "Hello world! This is a test. This test has multiple sentences."
+        val text = "This is a test. This test has multiple sentences. Multiple words are also in this sentence."
 
-        assertEquals(10, analyzer.countWords(text))
+        assertEquals(16, analyzer.countWords(text))
         assertEquals(3, analyzer.countSentences(text))
         assertEquals("this", analyzer.getMostFrequentWord(text))
-        assertEquals(4.0, analyzer.getAverageWordLength(text))
+        assertEquals(73/16.0, analyzer.getAverageWordLength(text))
     }
 }

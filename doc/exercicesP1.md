@@ -171,8 +171,8 @@ class Exercise5Test {
 
 ## Exercice 6 : Conversion de nombres romains
 
-Créez un programme qui convertit les nombres romains en nombres arabes (entre 1 et 3999 inclusivement). Vous devrez
-probablement créer au moins deux fonctions : une pour valider l'entrée et une pour effectuer la conversion.
+Créez un programme qui convertit les nombres romains en nombres arabes (entre 1 et 3999 inclusivement). Vous devez
+créer au moins deux fonctions : une pour valider l'entrée et une pour effectuer la conversion.
 
 ```kotlin
 fun convertRomanToArabic(roman: String): Int {
@@ -219,10 +219,10 @@ class Exercise6Test {
 }
 ```
 
-## Exercice 7 : Jeu du morpion (Tic-Tac-Toe)
+## Exercice 7 : Jeu du Tic-Tac-Toe
 
-Implémentez un jeu de morpion. Vous aurez besoin de plusieurs fonctions pour gérer l'état du jeu, les mouvements des
-joueurs et vérifier s'il y a un gagnant.
+Implémentez quelques fonctions d'un jeu de Tic-Tac-Toe. Vous aurez besoin de plusieurs fonctions pour gérer l'état du
+jeu, les mouvements des joueurs et vérifier s'il y a un gagnant.
 
 ```kotlin
 class TicTacToe {
@@ -259,18 +259,19 @@ class Exercise7Test {
     fun testTicTacToe() {
         val game = TicTacToe()
 
-        assertTrue(game.makeMove('X', 0, 0))
-        assertFalse(game.makeMove('O', 0, 0))
-        assertTrue(game.makeMove('O', 1, 1))
-
+        assertTrue(game.makeMove('X', 1, 1))
+        assertFalse(game.makeMove('O', 1, 1))
+        assertTrue(game.makeMove('O', 2, 2))
+        assertFalse(game.makeMove('O', 1, 0))
+        
         assertEquals(null, game.checkWinner())
 
-        game.makeMove('X', 0, 1)
-        game.makeMove('X', 0, 2)
+        game.makeMove('X', 1, 2)
+        game.makeMove('X', 1, 3)
 
         assertEquals('X', game.checkWinner())
 
-        assertTrue(game.isBoardFull())
+        assertFalse(game.isBoardFull())
     }
 }
 ```
@@ -288,9 +289,7 @@ class RPNCalculator {
         // Votre code ici
     }
 
-    private fun performOperation(operator: String) {
-        // Votre code ici
-    }
+    // autres fonctions privées
 }
 ```
 
@@ -405,12 +404,12 @@ class Exercise10Test {
     @Test
     fun testTextAnalyzer() {
         val analyzer = TextAnalyzer()
-        val text = "Hello world! This is a test. This test has multiple sentences."
+        val text = "This is a test. This test has multiple sentences. Multiple words are also in this sentence."
 
-        assertEquals(10, analyzer.countWords(text))
+        assertEquals(16, analyzer.countWords(text))
         assertEquals(3, analyzer.countSentences(text))
         assertEquals("this", analyzer.getMostFrequentWord(text))
-        assertEquals(4.0, analyzer.getAverageWordLength(text))
+        assertEquals(73/16.0, analyzer.getAverageWordLength(text))
     }
 }
 ```

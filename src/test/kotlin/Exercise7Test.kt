@@ -10,17 +10,18 @@ class Exercise7Test {
     fun testTicTacToe() {
         val game = TicTacToe()
 
-        assertTrue(game.makeMove('X', 0, 0))
-        assertFalse(game.makeMove('O', 0, 0))
-        assertTrue(game.makeMove('O', 1, 1))
+        assertTrue(game.makeMove('X', 1, 1))
+        assertFalse(game.makeMove('O', 1, 1))
+        assertTrue(game.makeMove('O', 2, 2))
+        assertFalse(game.makeMove('O', 1, 0))
 
         assertEquals(null, game.checkWinner())
 
-        game.makeMove('X', 0, 1)
-        game.makeMove('X', 0, 2)
+        game.makeMove('X', 1, 2)
+        game.makeMove('X', 1, 3)
 
         assertEquals('X', game.checkWinner())
 
-        assertTrue(game.isBoardFull())
+        assertFalse(game.isBoardFull())
     }
 }

@@ -11,7 +11,7 @@ class Exercise8Test {
 
         assertEquals(3.0, calculator.evaluate("1 2 +"))
         assertEquals(23.0, calculator.evaluate("5 4 * 3 +"))
-        assertEquals(141.0, calculator.evaluate("3 4 + 5 * 3 -"))
+        assertEquals(32.0, calculator.evaluate("3 4 + 5 * 3 -"))
 
         assertFailsWith<IllegalArgumentException> {
             calculator.evaluate("1 +")
